@@ -1,0 +1,361 @@
+<html>
+<head>
+  <title>Welcome, alfateam123-sama!</title>
+  <script>
+  var searchquery = "";
+
+  var searchproviders = {
+    b: function(){load_categories(); return "";},
+    back: function(){this.b();},
+    g:  function(query){return 'https://www.google.com/search?q='+query;},
+    wa: function(query){return 'http://www.wolframalpha.com/input/?i='+query;},
+    nyaa: function(query){return 'http://www.nyaa.se/?page=search&term='+query;},
+    wiki: function(query, fullmatch){return 'http://en.wikipedia.org/w/index.php?search='+query;},
+    w: function(query, fullmatch){return this.wiki(query, fullmatch);},
+    yt: function(query){return 'https://www.youtube.com/results?search_query='+query;},
+    mdn: function(query){return 'https://developer.mozilla.org/en-US/search?q='+query;},
+    choose_category: function(cat){load_sites(cat); return "";},
+    open_site: function(site){document.location.href = sites.filter(function(s_){return s_.name==site;})[0].link_properties.link;}
+  };
+
+  var sites=[
+    {
+      name: "nerdz",
+      category: "sns",
+      hex_properties: "color: #1D1B1B; font-size:240px; position: absolute; top: 195px; left: 117px; transform: rotate(-8deg); z-index:-1;",
+      link_properties:{
+        link: 'https://nerdz.eu',
+        inner_html : "Nerdz",
+        style: "color: white;   font-size:46px;  position: absolute; top: 340px; left: 160px; transform: rotate(-8deg);"
+      },
+    },
+    {
+      name: "trakt",
+      category: "tracking",
+      hex_properties: "color: #034962; font-size:240px; position: absolute; top: 170px; left: 279px; transform: rotate(-8deg); z-index:-1;",
+      link_properties: {
+        link: "https://trakt.tv",
+        inner_html: "trakt",
+        style: "color: white;   font-size:45px;  position: absolute; top: 320px; left: 328px; transform: rotate(-8deg);"
+      }
+    },
+    {
+      name: "github",
+      category: "coding",
+      hex_properties: "color: transparent; font-size:240px; position: absolute; top: 145px; left: 442px; transform: rotate(-8deg); z-index:-1;",
+      link_properties: {
+        link: "http://github.com/alfateam123",
+        inner_html:"github", // "<img src='GitHub-Mark-64px.png'></img>",
+        style: "color: white;  font-size:45px;  position: absolute; top: 280px; left: 508px; transform: rotate(-8deg);"
+      }
+    },
+    {
+      name: "facebook",
+      category: "sns",
+      hex_properties: "color:#45619D; font-size:240px; position: absolute; top: 62px; left: 13px; transform: rotate(-9deg); z-index:-1;",
+      link_properties: {
+        link: "https://facebook.com",
+        inner_html: "fb",
+        style: "color: white; font-size:60px;  position: absolute; top: 200px; left: 87px; transform: rotate(-9deg);"
+      }
+    },
+    {
+      name: "twitter",
+      category: "sns",
+      hex_properties: "color:transparent; font-size:240px; position: absolute; top: 42px; left: 173px; transform: rotate(-9deg); z-index:-1;",
+      link_properties: {
+        link: "https://twitter.com",
+        inner_html:"twitter",//"<img src='bird_blue_48.png'></img>",
+        style: "color: white;  font-size:60px;  position: absolute; top: 195px; left: 252px; transform: rotate(-9deg);"
+      }
+    },
+    {
+      name: "outlook",
+      category: "mail",
+      hex_properties: "color:#005EA3; font-size:240px; position: absolute; top: 15px; left: 340px; transform: rotate(-8deg); z-index:-1;",
+      link_properties: {
+        link: "https://outlook.com",
+        inner_html:"outlook", //"<img src='OLHdrLogo2.png'></img>",
+        style: "color: white;  font-size:60px;  position: absolute; top: 170px; left: 365px; transform: rotate(-8deg);"
+      }
+    },
+    {
+      name: "gmail",
+      category: "mail",
+      hex_properties: "color:transparent; font-size:241px; position: absolute; top: -10px; left: 502px; transform: rotate(-8deg); z-index:-1;",
+      link_properties: {
+        link: "https://mail.google.com",
+        inner_html:"gmail", //"<img src='Logo_Gmail.png'></img>",
+        style: "color: white;  font-size:60px;  position: absolute; top: 140px; left: 535px; transform: rotate(-7deg);"
+      }
+    },
+    {
+      name: "feedly",
+      category: "tracking",
+      hex_properties: "color:transparent; font-size:240px; position: absolute; top: 323px; left: 218px; transform: rotate(-8deg); z-index:-1;",
+      link_properties: {
+        link: "http://feedly.com",
+        inner_html: "feedly", //inner_html: "<img style='width:120px; height:120px;' src='Feedly_Logo.png'></img>",
+        style: "color: white; font-size:60px; position: absolute; top: 438px; left: 255px; transform: rotate(-7deg);"
+      }
+    },
+    {
+      name: "trello",
+      category: "tracking",
+      hex_properties: "color:#256C95; font-size:240px; position: absolute; top: 42px; left: 173px; transform: rotate(-9deg); z-index:-1;",
+      link_properties: {
+        link: "https://trello.com",
+        inner_html:"trello",
+        style: "color: white;  font-size:45px;  position: absolute; top: 185px; left: 225px; transform: rotate(-9deg);"
+      }
+    },
+    {
+      name: "anobii",
+      category: "tracking",
+      hex_properties: "color: #322E2B; font-size:240px; position: absolute; top: 195px; left: 117px; transform: rotate(-8deg); z-index:-1;",
+      link_properties:{
+        link: 'http://www.anobii.com/alfateam123/books',
+        inner_html : "Anobii",
+        style: "color: white; font-size:45px;  position: absolute; top: 340px; left: 155px; transform: rotate(-8deg);"
+      },
+    },
+    {
+      name: "bitbucket",
+      category: "coding",
+      hex_properties: "color:#205081; font-size:240px; position: absolute; top: 15px; left: 340px; transform: rotate(-8deg); z-index:-1;",
+      link_properties: {
+        link: "https://bitbucket.org",
+        inner_html:"bitbucket",
+        style: "color: white;  font-size:30px;  position: absolute; top: 175px; left: 380px; transform: rotate(-8deg);"
+      }
+    },
+    {
+      name: "deezer",
+      category: "fun",
+      hex_properties: "color:#333333; font-size:240px; position: absolute; top: 42px; left: 178px; transform: rotate(-9deg); z-index:-1;",
+      link_properties: {
+        link: "https://deezer.com",
+        inner_html:"Deezer",
+        style: "color: white;  font-size:45px;  position: absolute; top: 178px; left: 210px; transform: rotate(-9deg);"
+      }
+    },
+    {
+      name: "nyaa",
+      category: "fun",
+      hex_properties: "color: #A0E0B0; font-size:240px; position: absolute; top: 170px; left: 279px; transform: rotate(-8deg); z-index:-1;",
+      link_properties: {
+        link: "https://nyaa.se",
+        inner_html: "nyaa",
+        style: "color: #0F3D0F;   font-size:45px;  position: absolute; top: 315px; left: 333px; transform: rotate(-8deg);"
+      }
+    },
+    {
+      name: "torrents",
+      category: "fun",
+      hex_properties: "color: #D1D1D1; font-size:240px; position: absolute; top: 195px; left: 117px; transform: rotate(-8deg); z-index:-1;",
+      link_properties:{
+        link: 'https://torrents.niggazwithattitu.de',
+        inner_html : "torrents@nwa",
+        style: "color: black; font-size:24px;  position: absolute; top: 350px; left: 145px; transform: rotate(-8deg);"
+      },
+    },
+    {
+      name: "dillinger",
+      category: "coding",
+      hex_properties: "color: #DEB887; font-size:240px; position: absolute; top: 170px; left: 279px; transform: rotate(-8deg); z-index:-1;",
+      link_properties: {
+        link: "http://dillinger.io",
+        inner_html: "dillinger.io",
+        style: "color: #7FC259; font-size:30px;  position: absolute; top: 325px; left: 312px; transform: rotate(-8deg);"
+      }
+    },
+    {
+      name: "dillinger",
+      category: "sns",
+      hex_properties: "color: #DEB887; font-size:240px; position: absolute; top: 170px; left: 279px; transform: rotate(-8deg); z-index:-1;",
+      link_properties: {
+        link: "http://tumblr.com",
+        inner_html: "tumblr",
+        style: "color: #7FC259; font-size:30px;  position: absolute; top: 325px; left: 312px; transform: rotate(-8deg);"
+      }
+    },
+    {
+      name: "back",
+      category: "__backitem",
+      hex_properties: "color: #DEB887; font-size:240px; position: absolute; top: 170px; left: 279px; transform: rotate(-8deg); z-index:-1;",
+      link_properties: {
+        link: "javascript:delete_items();",
+        inner_html: "back",
+        style: "color: #7FC259; font-size:30px;  position: absolute; top: 325px; left: 312px; transform: rotate(-8deg);"
+      }
+    }
+  ];
+
+  var categories = [
+    {
+        name: "sns",
+        hex_properties: "color: #1D1B1B; font-size:240px; position: absolute; top: 195px; left: 117px; transform: rotate(-8deg); z-index:-1;",
+        link_properties:{
+          inner_html : "social networks",
+          style: "color: white; font-size:30px;  position: absolute; top: 330px; left: 160px; transform: rotate(-8deg);",
+          back_style: "color: white; font-size:30px;  position: absolute; top: 330px; left: 160px; transform: rotate(-8deg);"
+        },
+    },
+    {
+      name: "tracking",
+      hex_properties: "color: #034962; font-size:240px; position: absolute; top: 170px; left: 279px; transform: rotate(-8deg); z-index:-1;",
+      link_properties: {
+        inner_html: "tracking",
+        style: "color: white; font-size:35px; position: absolute; top: 320px; left: 321px; transform: rotate(-8deg);",
+        back_style: "color: white; font-size:35px; position: absolute; top: 320px; left: 321px; transform: rotate(-8deg);"
+      }
+    },
+    {
+      name: "mail",
+      hex_properties: "color: transparent; font-size:240px; position: absolute; top: 145px; left: 442px; transform: rotate(-8deg); z-index:-1;",
+      link_properties: {
+        inner_html: "mail",
+        style: "color: black; font-size:45px;  position: absolute; top: 285px; left: 495px; transform: rotate(-8deg);"
+      }
+    },
+    {
+      name: "coding",
+      hex_properties: "color:transparent; font-size:245px; position: absolute; top: 10px; left: 337px; transform: rotate(-8deg); z-index:-1;",
+      link_properties: {
+        inner_html:"coding",
+        style: "color: black;  font-size:45px;  position: absolute; top: 160px; left: 375px; transform: rotate(-8deg);"
+      }
+    },
+    {
+      name: "fun",
+      hex_properties: "color:transparent; font-size:240px; position: absolute; top: 42px; left: 173px; transform: rotate(-9deg); z-index:-1;",
+      link_properties: {
+        inner_html:"fun",
+        style: "color: green;  font-size:60px;  position: absolute; top: 175px; left: 240px; transform: rotate(-9deg);"
+      }
+    }
+  ];
+
+  var redir = function(url){ document.location.href = url; }
+
+  var createItem=function(inner_html, props, return_item){
+    console.log("[createItem]", inner_html, props, return_item);
+    //var newItem = document.createElement('div');
+    var newItem = document.createElement("li");
+    newItem.innerHTML = inner_html;
+    newItem.style = props;
+    if(return_item)
+      return newItem; //it may be added later
+    //document.body.appendChild(newItem);
+    document.getElementById(props.category===undefined?"mycategories":"mysites").appendChild(newItem);
+  }
+
+  var createHex = function(props){
+    //createItem("&#x2B22;", props.hex_properties);
+    //console.log("createHex", props)
+    //createItem(props.name, "")
+  }
+
+
+  var createLink = function(props){
+    //var link = createItem(props.link_properties.inner_html, props.link_properties.style, true);
+    var link = createItem(props.link_properties.inner_html, "", true);
+    link.onclick = function(){
+      if(typeof(props.category)=='undefined'){
+        load_sites(props.name);
+      }
+      else
+        redir(props.link_properties.link);
+    };
+    document.getElementById(props.category===undefined?"mycategories":"mysites").appendChild(link);
+  }
+
+  var load_categories = function(){
+    delete_items();
+    for (var i = categories.length - 1; i >= 0; i--) {
+      //createHex(categories[i]);
+      createLink(categories[i]);
+    };
+    load_searchbar();
+  }
+
+  var load_sites = function(category){
+    delete_items();
+    var found_sites = false;
+    for (var i = sites.length - 1; i >= 0; i--) {
+      if(sites[i].category === category /*|| sites[i].category === "__backitem"*/){
+        found_sites = true;
+        createHex(sites[i]);
+        createLink(sites[i]);
+      }
+    };
+    return found_sites;
+  }
+
+  var delete_items = function(){
+    /*
+    try{
+      while(true)
+        document.getElementById("mylist").removeChild(document.body.childNodes[2]);
+    }catch(TypeError){
+      console.log("[delete_items] deleted 'em all!");
+    };*/
+    console.log("[delete_item]")
+    document.getElementById("mysites").innerHTML = "";
+    //document.getElementById("mycategories").innerHTML = "";
+  }
+
+  var load_searchbar = function(argument) {
+    var searchbar = document.getElementById("searchbar");
+    searchbar.onkeyup=function(event){
+      console.log("[searchbar.onkeyup] event:", event);
+      if(event.key === 'Enter'){
+        searchquery = searchbar.value.toLowerCase();
+        search();
+      }
+    }
+    searchbar.focus();
+  }
+
+  var search = function(){
+    console.log("[search] searchquery: "+searchquery);
+    var wholematch, site, query;
+    if(searchquery.match(/\:(\w+)/)){
+      try{
+        [wholematch, site, query] = searchquery.match(/\:(\w+) (.+)/);
+        document.location.href = searchproviders[site](query, wholematch);
+      }catch(TypeError){
+        //using the same system for commands
+        [wholematch, site] = searchquery.match(/\:(\w+)/);
+        try{
+          searchproviders[site]();
+        }catch(TypeError){
+          if(!searchproviders['choose_category'](site))
+            searchproviders['open_site'](site);
+        }
+      }
+    }
+    else{
+      searchquery = ':g '+searchquery;
+      search(); //default to google.com
+    }
+  }
+
+  </script>
+</head>
+<body onload="load_categories(); " background="wallhaven-5361-adapted.png"> <!--background="wallpaper-1733517.jpg"--> 
+<div style="padding:15% 0% 0% 0%">
+  <input type="textbox" placeholder="\o" id="searchbar"/>
+  <!-- Tsurugi, please, forgive me. -->
+  <table><tr>
+  <td>
+    <ul id="mycategories">
+    </ul>
+  </td>
+  <td>
+    <ul id="mysites">
+    </ul>
+  </td></tr></table>
+</div>
+</body>
+</html>
