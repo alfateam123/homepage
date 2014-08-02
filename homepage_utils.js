@@ -1,0 +1,1 @@
+var redir = function(url){ document.location.href = url; }
