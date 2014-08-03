@@ -15,7 +15,7 @@ var x = 0; //canvas.width / 2;
  var quart = Math.PI / 2;
  var drawnitems = 0;
  var offsetFromLine = 50;
- var items = categories;
+ var items = []; //categories;
 var canvas;
 var context;
 var bg = new Image();
@@ -28,9 +28,9 @@ canvas = document.getElementById('a_cute_canvas');
  canvas.width = window.innerWidth - 20;
  canvas.height = window.innerHeight - 20;
 context = canvas.getContext('2d');
-y = canvas.height; 
-
- 
+y = canvas.height;
+  items = categories;
+  console.log("[draw_canvas]", items);
   load_it();
 }
 

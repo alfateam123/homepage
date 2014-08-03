@@ -1,1 +1,211 @@
-{"lol": "asd"}
+{"sites":[
+    {
+      "shown_name": "[n]erdz",
+      "category": "sns",
+      "hex_properties": "color: #1D1B1B; font-size:240px; position: absolute; top: 195px; left: 117px; transform: rotate(-8deg); z-index:-1;",
+      "link_properties":{
+        "link": "https://nerdz.eu",
+        "inner_html" : "Nerdz",
+        "style": "color: white;   font-size:46px;  position: absolute; top: 340px; left: 160px; transform: rotate(-8deg);"
+      },
+      "keycode": "n"
+    },
+    {
+      "shown_name": "[t]rakt",
+      "category": "tracking",
+      "hex_properties": "color: #034962; font-size:240px; position: absolute; top: 170px; left: 279px; transform: rotate(-8deg); z-index:-1;",
+      "link_properties": {
+        "link": "https://trakt.tv",
+        "inner_html": "trakt",
+        "style": "color: white;   font-size:45px;  position: absolute; top: 320px; left: 328px; transform: rotate(-8deg);"
+      },
+      "keycode": "t"
+    },
+    {
+      "shown_name": "[g]ithub",
+      "category": "coding",
+      "hex_properties": "color: transparent; font-size:240px; position: absolute; top: 145px; left: 442px; transform: rotate(-8deg); z-index:-1;",
+      "link_properties": {
+        "link": "http://github.com/alfateam123",
+        "inner_html": "github",
+        "style": "color: white;  font-size:45px;  position: absolute; top: 280px; left: 508px; transform: rotate(-8deg);"
+      },
+      "keycode": "g"
+    },
+    {
+      "shown_name": "[f]acebook",
+      "category": "sns",
+      "hex_properties": "color:#45619D; font-size:240px; position: absolute; top: 62px; left: 13px; transform: rotate(-9deg); z-index:-1;",
+      "link_properties": {
+        "link": "https://facebook.com",
+        "inner_html": "fb",
+        "style": "color: white; font-size:60px;  position: absolute; top: 200px; left: 87px; transform: rotate(-9deg);"
+      },
+      "keycode": "f"
+    },
+    {
+      "shown_name": "[t]witter",
+      "category": "sns",
+      "hex_properties": "color:transparent; font-size:240px; position: absolute; top: 42px; left: 173px; transform: rotate(-9deg); z-index:-1;",
+      "link_properties": {
+        "link": "https://twitter.com",
+        "inner_html":"twitter",
+        "style": "color: white;  font-size:60px;  position: absolute; top: 195px; left: 252px; transform: rotate(-9deg);"
+      },
+      "keycode": "t"
+    },
+    {
+      "shown_name": "[o]utlook",
+      "category": "mail",
+      "hex_properties": "color:#005EA3; font-size:240px; position: absolute; top: 15px; left: 340px; transform: rotate(-8deg); z-index:-1;",
+      "link_properties": {
+        "link": "https://outlook.com",
+        "inner_html":"outlook", 
+        "style": "color: white;  font-size:60px;  position: absolute; top: 170px; left: 365px; transform: rotate(-8deg);"
+      },
+      "keycode": "o"
+    },
+    {
+      "shown_name": "[g]mail",
+      "category": "mail",
+      "hex_properties": "color:transparent; font-size:241px; position: absolute; top: -10px; left: 502px; transform: rotate(-8deg); z-index:-1;",
+      "link_properties": {
+        "link": "https://mail.google.com",
+        "inner_html":"gmail",
+        "style": "color: white;  font-size:60px;  position: absolute; top: 140px; left: 535px; transform: rotate(-7deg);"
+      },
+      "keycode": "g"
+    },
+    {
+      "shown_name": "[f]eedly",
+      "category": "tracking",
+      "hex_properties": "color:transparent; font-size:240px; position: absolute; top: 323px; left: 218px; transform: rotate(-8deg); z-index:-1;",
+      "link_properties": {
+        "link": "http://feedly.com",
+        "inner_html": "feedly", 
+        "style": "color: white; font-size:60px; position: absolute; top: 438px; left: 255px; transform: rotate(-7deg);"
+      },
+      "keycode": "f"
+    },
+    {
+      "shown_name": "t[r]ello",
+      "category": "tracking",
+      "hex_properties": "color:#256C95; font-size:240px; position: absolute; top: 42px; left: 173px; transform: rotate(-9deg); z-index:-1;",
+      "link_properties": {
+        "link": "https://trello.com",
+        "inner_html":"trello",
+        "style": "color: white;  font-size:45px;  position: absolute; top: 185px; left: 225px; transform: rotate(-9deg);"
+      },
+      "keycode": "r"
+    },
+    {
+      "shown_name": "[a]nobii",
+      "category": "tracking",
+      "hex_properties": "color: #322E2B; font-size:240px; position: absolute; top: 195px; left: 117px; transform: rotate(-8deg); z-index:-1;",
+      "link_properties":{
+        "link": "http://www.anobii.com/alfateam123/books",
+        "inner_html" : "Anobii",
+        "style": "color: white; font-size:45px;  position: absolute; top: 340px; left: 155px; transform: rotate(-8deg);"
+      },
+      "keycode": "a"
+    },
+    {
+      "shown_name": "[b]itbucket",
+      "category": "coding",
+      "hex_properties": "color:#205081; font-size:240px; position: absolute; top: 15px; left: 340px; transform: rotate(-8deg); z-index:-1;",
+      "link_properties": {
+        "link": "https://bitbucket.org",
+        "inner_html":"bitbucket",
+        "style": "color: white;  font-size:30px;  position: absolute; top: 175px; left: 380px; transform: rotate(-8deg);"
+      },
+      "keycode": "b"
+    },
+    {
+      "shown_name": "[d]eezer",
+      "category": "fun",
+      "hex_properties": "color:#333333; font-size:240px; position: absolute; top: 42px; left: 178px; transform: rotate(-9deg); z-index:-1;",
+      "link_properties": {
+        "link": "https://deezer.com",
+        "inner_html":"Deezer",
+        "style": "color: white;  font-size:45px;  position: absolute; top: 178px; left: 210px; transform: rotate(-9deg);"
+      },
+      "keycode": "d"
+    },
+    {
+      "shown_name": "[n]yaa",
+      "category": "fun",
+      "hex_properties": "color: #A0E0B0; font-size:240px; position: absolute; top: 170px; left: 279px; transform: rotate(-8deg); z-index:-1;",
+      "link_properties": {
+        "link": "https://nyaa.se",
+        "inner_html": "nyaa",
+        "style": "color: #0F3D0F;   font-size:45px;  position: absolute; top: 315px; left: 333px; transform: rotate(-8deg);"
+      },
+      "keycode": "n"
+    },
+    {
+      "shown_name": "[d]illinger",
+      "category": "coding",
+      "hex_properties": "color: #DEB887; font-size:240px; position: absolute; top: 170px; left: 279px; transform: rotate(-8deg); z-index:-1;",
+      "link_properties": {
+        "link": "http://dillinger.io",
+        "inner_html": "dillinger.io",
+        "style": "color: #7FC259; font-size:30px;  position: absolute; top: 325px; left: 312px; transform: rotate(-8deg);"
+      },
+      "keycode": "d"
+    }
+  ],
+  "categories": [
+    {
+        "name": "sns",
+        "shown_name": "[s]ns",
+        "hex_properties": "color: #1D1B1B; font-size:240px; position: absolute; top: 195px; left: 117px; transform: rotate(-8deg); z-index:-1;",
+        "link_properties":{
+          "inner_html" : "social networks",
+          "style": "color: white; font-size:30px;  position: absolute; top: 330px; left: 160px; transform: rotate(-8deg);",
+          "back_style": "color: white; font-size:30px;  position: absolute; top: 330px; left: 160px; transform: rotate(-8deg);"
+        },
+        "keycode": "s"
+    },
+    {
+      "name": "tracking",
+      "shown_name": "[t]racking",
+      "hex_properties": "color: #034962; font-size:240px; position: absolute; top: 170px; left: 279px; transform: rotate(-8deg); z-index:-1;",
+      "link_properties": {
+        "inner_html": "tracking",
+        "style": "color: white; font-size:35px; position: absolute; top: 320px; left: 321px; transform: rotate(-8deg);",
+        "back_style": "color: white; font-size:35px; position: absolute; top: 320px; left: 321px; transform: rotate(-8deg);"
+      },
+      "keycode": "t"
+    },
+    {
+      "name": "mail",
+      "shown_name": "[m]ail",
+      "hex_properties": "color: transparent; font-size:240px; position: absolute; top: 145px; left: 442px; transform: rotate(-8deg); z-index:-1;",
+      "link_properties": {
+        "inner_html": "mail",
+        "style": "color: black; font-size:45px;  position: absolute; top: 285px; left: 495px; transform: rotate(-8deg);"
+      },
+      "keycode": "m"
+    },
+    {
+      "name": "coding",
+      "shown_name": "[c]oding",
+      "hex_properties": "color:transparent; font-size:245px; position: absolute; top: 10px; left: 337px; transform: rotate(-8deg); z-index:-1;",
+      "link_properties": {
+        "inner_html":"coding",
+        "style": "color: black;  font-size:45px;  position: absolute; top: 160px; left: 375px; transform: rotate(-8deg);"
+      },
+      "keycode": "c"
+    },
+    {
+      "name": "fun",
+      "shown_name": "[f]un",
+      "hex_properties": "color:transparent; font-size:240px; position: absolute; top: 42px; left: 173px; transform: rotate(-9deg); z-index:-1;",
+      "link_properties": {
+        "inner_html":"fun",
+        "style": "color: green;  font-size:60px;  position: absolute; top: 175px; left: 240px; transform: rotate(-9deg);"
+      },
+      "keycode": "f"
+    }
+  ]
+}
