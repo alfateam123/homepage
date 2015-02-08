@@ -1,3 +1,4 @@
+from __future__ import print_function
 import json
 import sys
 import string
@@ -27,7 +28,7 @@ def add_category(conf, category):
 		keycode = look_for_available_keycode(conf, args.name, args.category)[0]
 		shown_name = args.name.replace(keycode, "[%s]"%keycode, 1) #replace only the first one
 	except:
-		print "all keys are taken, giving random keycode..."
+		print("all keys are taken, giving random keycode...")
 		keycode = random_keycode(doc, args.category)
 		shown_name = args.name + " [%s]"%keycode
 	new_obj["keycode"] = keycode
@@ -53,7 +54,7 @@ def add_site(parameters):
 		keycode = look_for_available_keycode(doc, args.name, args.category)[0]
 		shown_name = args.name.replace(keycode, "[%s]"%keycode)
 	except:
-		print "all keys are taken, giving random keycode..."
+		print("all keys are taken, giving random keycode...")
 		keycode = random_keycode(doc, args.category)
 		shown_name = args.name + " [%s]"%keycode
 	new_obj["keycode"] = keycode
@@ -78,14 +79,28 @@ def remove_site(parameters):
 	#don't add the automatic category removal, for now
 	json.dump(doc, open("test.json", "w"))
 
+def list_sites(parameters=None):
+	doc = read_conf()
+	categories = dict()
+	for site in doc["sites"]:
+#		print(" ".join((site["shown_name"], "->", site["link_properties"]["link"], "in category", site["category"])))
+		try: categories[site["category"]].append(site)
+		except: categories[site["category"]] = [site]
+    #print them all
+	for category in categories:
+		print("into category", category, ":")
+		for site in categories[category]:
+			print(" ".join((site["shown_name"], "->", site["link_properties"]["link"])))
+
+
 functions = {
 	"site add": add_site,
-	"site remove": remove_site
+	"site remove": remove_site,
+	"site list": list_sites
 }
 
 if __name__ == '__main__':
 	try:
 		functions[" ".join(sys.argv[1:3])](sys.argv[3:])
-
 	except KeyError:
-		print "it should be:", "\n* ".join(functions.keys())
+		print("it should be:", "\n* ".join(functions.keys()))
